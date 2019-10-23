@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { PhotoService } from './photos/photo/photo.service';
+import { Photo } from './photos/photo/photo';
 
 
 @Component({
@@ -8,13 +9,18 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Anderson Sutil';
-  photos:Object[] = []; //<--- Para fotos retornar um Array de Objetos de tipo Photos
+  photos: Photo[] = []; //<--- Para fotos retornar um Array de Objetos de tipo Photos
 
-  constructor(http: HttpClient) { //<--- Utilizando a Injeção de Dependência do HttpClient
-    http
-    .get<Object[]>('http://localhost:3000/flavio/photos')
-    .subscribe(photos =>{console.log(photos); this.photos = photos});
+  constructor(private photoService: PhotoService) { }
+
+  ngOnInit(): void {
+
+    this.photoService
+      .listFromUser('flavio')
+      .subscribe(photos => {console.log(photos[0].description),
+        this.photos = photos
+      });
   }
 }
