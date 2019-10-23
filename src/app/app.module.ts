@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     PhotosModule,
-    HttpClientModule
+    HttpClientModule   //<--- Importando o Modulo do  HttpClient 
   ],
   providers: [],
   bootstrap: [AppComponent]

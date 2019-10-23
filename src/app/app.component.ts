@@ -10,9 +10,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'Anderson Sutil';
-  photos:Object[] = [];
+  photos:Object[] = []; //<--- Para fotos retornar um Array de Objetos de tipo Photos
 
-  constructor(http: HttpClient) {
+  constructor(http: HttpClient) { //<--- Utilizando a Injeção de Dependência do HttpClient
     http
     .get<Object[]>('http://localhost:3000/flavio/photos')
     .subscribe(photos =>{console.log(photos); this.photos = photos});
