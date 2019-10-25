@@ -1,3 +1,2 @@
-{{title}}
-<ap-photo url="https://i.pinimg.com/originals/05/85/59/0585598979733e17e5c3c9a6f0309cf9.jpg" alt ="Desenho" ></ap-photo>
-<ap-photo url="https://i.pinimg.com/564x/21/ed/dc/21eddc409004041f8b8dd6e01c310481.jpg" alt="Desenho2" ></ap-photo>
+<p>{{title}}</p>
+<ap-photo *ngFor="let photo of photos" [url]="photo.url" [description]="photo.description"></ap-photo>
