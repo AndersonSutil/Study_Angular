@@ -6,7 +6,7 @@ import { Photo } from '../photo/photo';
 @Component({
   selector: 'app-photo-list',
   templateUrl: './photo-list.component.html',
-  styleUrls: ['./photo-list.component.css']
+  // styleUrls: ['./photo-list.component.css']
 })
 export class PhotoListComponent implements OnInit {
 
