@@ -23,3 +23,4 @@ describe('PhotoListComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

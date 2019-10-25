@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { PhotoService } from '../photo/photo.service';
 import { Photo } from '../photo/photo';
 
@@ -8,6 +9,7 @@ import { Photo } from '../photo/photo';
   // styleUrls: ['./photo-list.component.css']
 })
 export class PhotoListComponent implements OnInit {
+
   photos: Photo[] = []; //<--- Para fotos retornar um Array de Objetos de tipo Photos
 
   constructor(private photoService: PhotoService) { }
